@@ -24,9 +24,10 @@
 
 /* DARK MODE VARIABLES */
 [data-theme="dark"] {
-    --bg-main: linear-gradient(135deg, #020617, #0f172a, #1e293b);
-    --bg-section: rgba(255, 255, 255, 0.04);
-    --bg-card: rgba(255, 255, 255, 0.06);
+    /* More transparent background to show Spline */
+    --bg-main: rgba(2, 6, 23, 0.4);
+    --bg-section: rgba(255, 255, 255, 0.05);
+    --bg-card: rgba(30, 41, 59, 0.7);
 
     --text-main: #e5e7eb;
     --text-muted: #94a3b8;
@@ -35,18 +36,56 @@
     --border: rgba(255, 255, 255, 0.12);
 }
 
+/* SPLINE BACKGROUND */
+#spline-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+/* Show Spline in Dark Mode */
+[data-theme="dark"] #spline-bg {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+    /* Sit just above the body but below content */
+}
+
 /* BASE */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
     line-height: 1.6;
     background: var(--bg-main);
     color: var(--text-main);
+    position: relative;
+}
+
+section,
+header,
+footer {
+    position: relative;
+    z-index: 10;
+    /* Ensure content is above the background iframe */
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 /* HEADER */
@@ -103,6 +142,13 @@ body {
 .hero {
     padding: 110px 0 90px;
     text-align: center;
+    pointer-events: none;
+    /* Let events pass through to Spline background */
+}
+
+.hero>* {
+    pointer-events: auto;
+    /* Re-enable for content (buttons, text) */
 }
 
 .hero-title {
@@ -143,6 +189,22 @@ body {
     color: #fff;
 }
 
+.btn-primary {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
 .btn-github {
     background: #24292f;
     color: #fff;
@@ -150,6 +212,47 @@ body {
 
 .btn-github:hover {
     background: #444d56;
+}
+
+/* HOW IT WORKS */
+.how-it-works {
+    padding: 90px 0;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.step-card {
+    position: relative;
+    padding: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.step-title {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
 }
 
 /* FEATURES */
@@ -190,12 +293,119 @@ body {
     color: var(--text-muted);
 }
 
+/* PROJECTS */
+.projects {
+    padding: 90px 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.project-image-placeholder {
+    height: 200px;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
 /* FOOTER */
 .footer {
     background: linear-gradient(135deg, #0f172a, #020617);
     color: #cbd5f5;
-    text-align: center;
-    padding: 2.5rem 0;
+    padding: 100px 0 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.footer-info .logo {
+    margin-bottom: 1.5rem;
+}
+
+.footer-info p {
+    max-width: 400px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.footer-form h3 {
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.footer input,
+.footer textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.footer input::placeholder,
+.footer textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.footer input:focus,
+.footer textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
 
 /* RESPONSIVE */

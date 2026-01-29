@@ -32,3 +32,22 @@ function disableDark() {
     toggleBtn.textContent = '🌙';
     localStorage.setItem('theme', 'light');
 }
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            alert('Thanks for reaching out! This is a demo form.');
+            btn.textContent = originalText;
+            btn.disabled = false;
+            contactForm.reset();
+        }, 1500);
+    });
+}

@@ -1,96 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RepliCode – Build. Learn. Replicate.</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container">
-        <div class="logo">RepliCode</div>
+    <!-- HEADER -->
+    <iframe id="spline-bg" src='https://my.spline.design/boxeshover-909lnQhgsbaqtS9rKxS1grca/' frameborder='0'
+        width='100%' height='100%'></iframe>
+    <header class="header">
+        <div class="container">
+            <div class="logo">RepliCode</div>
 
-        <nav class="nav">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#contact">Contact</a>
-        </nav>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#features">Features</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-        <!-- THEME TOGGLE -->
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-            🌙
-        </button>
-    </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-    <div class="container">
-        <h1 class="hero-title">Build. Learn. Replicate.</h1>
-        <p class="hero-subtitle">
-            Practice coding by building real-world projects.
-        </p>
-
-        <div class="button-group">
-            <a
-                href="https://github.com/Nowfil-glitch"
-                target="_blank"
-                rel="noopener"
-                class="btn-github"
-            >
-                View on GitHub
-            </a>
-
-            <a href="#features" class="btn-secondary">
-                Explore Features
-            </a>
+            <!-- THEME TOGGLE -->
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                🌙
+            </button>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- FEATURES -->
-<section class="features" id="features">
-    <div class="container">
-        <div class="features-grid">
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 class="hero-title">Build. Learn. Replicate.</h1>
+            <p class="hero-subtitle">
+                Practice coding by building real-world projects.
+            </p>
 
-            <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3 class="feature-title">Learn by Doing</h3>
-                <p class="feature-description">
-                    Improve skills by building, not memorizing.
-                </p>
+            <div class="button-group">
+                <a href="https://github.com/Nowfil-glitch" target="_blank" rel="noopener" class="btn-github">
+                    View on GitHub
+                </a>
+
+                <a href="#how-it-works" class="btn-secondary">
+                    Get Started
+                </a>
             </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💻</div>
-                <h3 class="feature-title">Real Projects</h3>
-                <p class="feature-description">
-                    Study and recreate real-world applications.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⚙️</div>
-                <h3 class="feature-title">Simple Flow</h3>
-                <p class="feature-description">
-                    Clear steps. No unnecessary complexity.
-                </p>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
-<footer class="footer" id="contact">
-    <div class="container">
-        <p>© 2026 RepliCode. Built for learners.</p>
-    </div>
-</footer>
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Choose a Project</h3>
+                    <p>Browse our curated list of frontend challenges from real-world examples.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Build & Replicate</h3>
+                    <p>Follow the requirements and design to recreate the project from scratch.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Master the Skill</h3>
+                    <p>Compare your solution, learn best practices, and level up your coding game.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">Learn by Doing</h3>
+                    <p class="feature-description">
+                        Improve skills by building, not memorizing.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3 class="feature-title">Real Projects</h3>
+                    <p class="feature-description">
+                        Study and recreate real-world applications.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Simple Flow</h3>
+                    <p class="feature-description">
+                        Clear steps. No unnecessary complexity.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image-placeholder">Landing Page</div>
+                    <div class="project-info">
+                        <h3>SaaS Dashboard</h3>
+                        <p>Clean, interactive admin panel with dark mode.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-placeholder">E-commerce</div>
+                    <div class="project-info">
+                        <h3>Shopper App</h3>
+                        <p>Modern product listing with interactive cart flow.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-placeholder">Portfolio</div>
+                    <div class="project-info">
+                        <h3>Dev Portfolio</h3>
+                        <p>Minimalist portfolio with smooth transitions.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h2 class="logo">RepliCode</h2>
+                    <p>Empowering developers to build better through practice and replication.</p>
+                    <p>© 2026 RepliCode. Built for learners.</p>
+                </div>
+                <div class="footer-form">
+                    <h3>Get in Touch</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
